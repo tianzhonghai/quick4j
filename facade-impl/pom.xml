@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>quick4j</artifactId>
+        <groupId>com.sgs.quick4j</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>quick4j-facade-impl</artifactId>
+    <name>quick4j-facade-impl</name>
+    <version>${quick4j.facade.version}</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sgs.quick4j</groupId>
+            <artifactId>quick4j-domain</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sgs.quick4j</groupId>
+            <artifactId>quick4j-facade</artifactId>
+        </dependency>
+    </dependencies>
+</project>
