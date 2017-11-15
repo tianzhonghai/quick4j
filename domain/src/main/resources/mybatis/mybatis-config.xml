@@ -19,6 +19,9 @@
     <typeAliases>
         <!--<package name="sample.mybatis.domain"/>-->
     </typeAliases>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
     <mappers>
         <!--<mapper resource="sample/mybatis/mapper/CityMapper.xml"/>-->
         <!--<mapper resource="sample/mybatis/mapper/HotelMapper.xml"/>-->

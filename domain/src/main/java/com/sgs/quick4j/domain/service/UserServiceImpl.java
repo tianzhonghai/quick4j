@@ -1,11 +1,12 @@
 package com.sgs.quick4j.domain.service;
 
-import com.sgs.quick4j.domain.dto.AddUserReqDto;
-import com.sgs.quick4j.domain.dto.GetUserInfoReqDto;
-import com.sgs.quick4j.domain.dto.GetUserInfoRespDto;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.sgs.quick4j.domain.dto.*;
 import com.sgs.quick4j.domain.entity.generated.UserEntity;
 import com.sgs.quick4j.domain.entity.generated.UserEntityExample;
 import com.sgs.quick4j.domain.repository.generated.UserMapper;
+import com.sgs.quick4j.infrastructure.PagedCollectionResp;
 import com.sgs.quick4j.infrastructure.exception.BizException;
 import com.sgs.quick4j.infrastructure.utils.DozerUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -56,9 +57,28 @@ public class UserServiceImpl implements UserService {
         return getUserInfoRespDtos;
     }
 
-    @Override
     public void addUserInfo(AddUserReqDto dto) {
 
         int a = 0;
+    }
+
+    public PagedCollectionResp<GetUserInfoListPagedRespDto> getUserInfoListPaged(GetUserInfoListPagedReqDto getUserInfoListPagedReqDto) {
+        UserEntityExample userEntityExample = new UserEntityExample();
+        if(! StringUtils.isBlank(getUserInfoListPagedReqDto.getUserName())){
+            userEntityExample.createCriteria().andNameLike(getUserInfoListPagedReqDto.getUserName());
+        }
+
+        PageHelper.startPage(getUserInfoListPagedReqDto.getPageNum(), getUserInfoListPagedReqDto.getPageSize());
+        List<UserEntity> userEntities = userMapper.selectByExample(userEntityExample);
+        PageInfo<UserEntity> pageInfo = new PageInfo<>(userEntities);
+        List<GetUserInfoListPagedRespDto> getUserInfoRespDtos = DozerUtils.mapList(userEntities, GetUserInfoListPagedRespDto.class);
+        PagedCollectionResp<GetUserInfoListPagedRespDto> result = new PagedCollectionResp<>();
+
+        result.setList(getUserInfoRespDtos);
+        result.setTotal((int)pageInfo.getTotal());
+        result.setPageNum(pageInfo.getPageNum());
+        result.setPageSize(pageInfo.getPageSize());
+
+        return result;
     }
 }

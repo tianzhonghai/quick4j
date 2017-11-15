@@ -1,9 +1,10 @@
 package com.sgs.quick4j.web.controllers;
 
-import com.sgs.quick4j.domain.dto.AddUserReqDto;
-import com.sgs.quick4j.domain.dto.GetUserInfoReqDto;
-import com.sgs.quick4j.domain.dto.GetUserInfoRespDto;
+import com.github.pagehelper.PageInfo;
+import com.sgs.quick4j.domain.dto.*;
 import com.sgs.quick4j.domain.service.UserService;
+import com.sgs.quick4j.infrastructure.GeneralResp;
+import com.sgs.quick4j.infrastructure.PagedCollectionResp;
 import com.sgs.quick4j.infrastructure.exception.BizException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -41,5 +42,14 @@ public class TestController {
         int a = 1,b,c;
         c = a / 0;
         return "ok";
+    }
+
+    @RequestMapping(value = "/getuserinfolistpaged", method = RequestMethod.POST)
+    public GeneralResp<PagedCollectionResp<GetUserInfoListPagedRespDto>> getUserInfoListPaged(@RequestBody GetUserInfoListPagedReqDto getUserInfoListPagedReqDto){
+        PagedCollectionResp<GetUserInfoListPagedRespDto> pageInfo = userService.getUserInfoListPaged(getUserInfoListPagedReqDto);
+
+        GeneralResp<PagedCollectionResp<GetUserInfoListPagedRespDto>> generalResp= new GeneralResp<>();
+        generalResp.success().setData(pageInfo);
+        return generalResp;
     }
 }

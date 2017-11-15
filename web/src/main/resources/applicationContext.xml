@@ -52,6 +52,15 @@
         <!--<property name="ma
         pperLocations" value="classpath:mybatis/**/*.xml"></property>-->
         <property name="mapperLocations" value="classpath*:com/sgs/quick4j/domain/repository/**/*Mapper.xml"></property>
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <value></value>
+                    </property>
+                </bean>
+            </array>
+        </property>
     </bean>
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->

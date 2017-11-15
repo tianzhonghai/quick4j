@@ -58,6 +58,10 @@
             <groupId>javassist</groupId>
             <artifactId>javassist</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+        </dependency>
         <!--自引用-->
         <dependency>
             <groupId>com.sgs.quick4j</groupId>

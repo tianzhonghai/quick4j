@@ -3,7 +3,7 @@
 <configuration scan="true" scanPeriod="10 seconds">
     <property name="queueSize" value="1024"/>
     <property name="LOG_PATH" value="/logs/"/>
-    <property name="level" value="debug" />
+    <property name="level" value="info" />
     <include resource="org/springframework/boot/logging/logback/base.xml" />
     <!--<include resource="org/springframework/boot/logging/logback/defaults.xml" />-->
 

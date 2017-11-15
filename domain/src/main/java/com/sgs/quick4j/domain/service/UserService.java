@@ -1,8 +1,9 @@
 package com.sgs.quick4j.domain.service;
 
-import com.sgs.quick4j.domain.dto.AddUserReqDto;
-import com.sgs.quick4j.domain.dto.GetUserInfoReqDto;
-import com.sgs.quick4j.domain.dto.GetUserInfoRespDto;
+import com.github.pagehelper.PageInfo;
+import com.github.pagehelper.PageInterceptor;
+import com.sgs.quick4j.domain.dto.*;
+import com.sgs.quick4j.infrastructure.PagedCollectionResp;
 import com.sgs.quick4j.infrastructure.exception.BizException;
 
 import java.util.List;
@@ -24,5 +25,16 @@ public interface UserService {
      */
     List<GetUserInfoRespDto> getUserInfoList( GetUserInfoReqDto getUserInfoReqDto );
 
+    /**
+     * 添加用户
+     * @param dto
+     */
     void addUserInfo(AddUserReqDto dto);
+
+    /**
+     * 分页查义用户信息
+     * @param getUserInfoListPagedReqDto
+     * @return
+     */
+    PagedCollectionResp<GetUserInfoListPagedRespDto> getUserInfoListPaged(GetUserInfoListPagedReqDto getUserInfoListPagedReqDto);
 }
