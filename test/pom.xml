@@ -20,10 +20,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.sgs.quick4j</groupId>
-            <artifactId>quick4j-facade</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -64,6 +60,16 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sgs.quick4j</groupId>
+            <artifactId>quick4j-facade</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sgs.quick4j</groupId>
+            <artifactId>quick4j-infrastructure</artifactId>
         </dependency>
     </dependencies>
 

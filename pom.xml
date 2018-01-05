@@ -57,6 +57,7 @@
 
         <commons-lang3.version>3.4</commons-lang3.version>
         <commons-io.version>2.4</commons-io.version>
+        <lombok.version>1.16.18</lombok.version>
 
         <quick4j.version>1.0.0.20171016</quick4j.version>
         <!--对外暴露的API，需发布到maven私服，供客户端引用。版本会不断升级。 -->
@@ -235,6 +236,13 @@
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
             <!--self-->
             <dependency>
                 <groupId>com.sgs.quick4j</groupId>
