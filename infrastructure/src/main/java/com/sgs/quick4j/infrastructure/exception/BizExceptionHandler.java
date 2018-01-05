@@ -27,7 +27,7 @@ public class BizExceptionHandler {
 //        return mav;
 //    }
 
-    @ExceptionHandler(value = BizException.class)
+    @ExceptionHandler(value = { BizException.class, Exception.class })
     @ResponseBody
     public GeneralResp<String> jsonErrorHandler(HttpServletRequest req, Exception e) throws Exception {
         logger.error(e.getMessage(),e);
