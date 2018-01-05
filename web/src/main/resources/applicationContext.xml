@@ -49,9 +49,8 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!-- 自动扫描mapping.xml文件 -->
-        <!--<property name="ma
-        pperLocations" value="classpath:mybatis/**/*.xml"></property>-->
-        <property name="mapperLocations" value="classpath*:com/sgs/quick4j/domain/repository/**/*Mapper.xml"></property>
+        <property name="mapperLocations" value="classpath:mappers/**/*.xml"></property>
+        <!--<property name="mapperLocations" value="classpath:com/sgs/quick4j/domain/resources/**/*Mapper.xml"></property>-->
         <property name="plugins">
             <array>
                 <bean class="com.github.pagehelper.PageInterceptor">
