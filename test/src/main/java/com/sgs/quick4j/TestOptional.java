@@ -20,10 +20,12 @@ public class TestOptional {
     @Test
     public void jtest(){
         OrderHead orderHead = null;
-
+        String defaultVal = "";
         Optional<OrderHead> optional = Optional.ofNullable(orderHead);
-        String prodName = optional.map(x -> x.getOrderItem()).map(x -> x.getProductName()).orElse("unknow");
+        String prodName = optional.map(x -> x.getOrderItem())
+                .map(x -> x.getProductName())
+                .orElse(defaultVal);
 
-        Assert.assertEquals(prodName,"unknow");
+        Assert.assertEquals(prodName,defaultVal);
     }
 }
