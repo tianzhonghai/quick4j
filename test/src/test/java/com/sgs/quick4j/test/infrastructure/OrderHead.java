@@ -1,4 +1,4 @@
-package com.sgs.quick4j;
+package com.sgs.quick4j.test.infrastructure;
 
 import lombok.Getter;
 import lombok.Setter;

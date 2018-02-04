@@ -1,6 +1,5 @@
-package com.sgs.quick4j;
+package com.sgs.quick4j.test.infrastructure;
 
-import org.assertj.core.api.StringAssert;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +14,6 @@ import java.util.Optional;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest()
-@SpringBootConfiguration
 public class TestOptional {
     @Test
     public void jtest(){
